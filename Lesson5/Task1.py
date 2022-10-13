@@ -12,8 +12,10 @@ def input_dat(name):
         x = int(input(f"{name}, введите корректное количество конфет: "))
     return x
 
-def input_bot():
+def input_bot(value):
     if value < 29: x = value
+    elif value < 58 and value > 29: x = value - 29
+    elif value < 86 and value > 57: x = value - 57
     else: x = randint(1,28)
     return x
 
@@ -43,7 +45,7 @@ while value > 0:
         flag = False
         p_print(player1, k, counter1, value)
     else:
-        if player2 == 'bot': k = input_bot(player2)
+        if player2 == 'bot': k = input_bot(value)
         else: k = input_dat(player2)
         counter2 += k
         value -= k
@@ -51,6 +53,7 @@ while value > 0:
         p_print(player2, k, counter2, value)
 
 if flag:
-    print(f"Выиграл {player1}")
-else:
     print(f"Выиграл {player2}")
+else:
+    print(f"Выиграл {player1}")
+print("и забирает все ", counter1+counter2, " конфет.")
