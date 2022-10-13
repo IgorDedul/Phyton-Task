@@ -16,7 +16,7 @@ def input_bot(value):
     if value < 29: x = value
     elif value < 58 and value > 29: x = value - 29
     elif value < 86 and value > 57: x = value - 57
-    else: x = randint(1,28)
+    else: x = randint(1,29)
     return x
 
 def p_print(name, k, counter, value):
